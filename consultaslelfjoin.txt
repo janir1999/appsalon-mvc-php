@@ -1,0 +1,18 @@
+SELECT * FROM citas
+LEFT OUTER JOIN usuarios
+ON citas.usuarioId=usuarios.id
+
+LEFT OUTER JOIN citasservicios
+ON citasservicios.citaId=citas.id
+
+LEFT OUTER JOIN servicios
+ON  servicios.id =citasservicios.servicioId
+where fecha = "2023-10-31"
+
+-cuale es la cita del usuario:
+primero muestra los la tabla de citas y luego la tabla de usuario segun la comparacion ON citas.usuarioId=usuarios.id
+
+-tabla pivote para despues acceder a los servicios:
+luego muestra la tabla citasservicios donde el citaid sea igual al campo id de la tabla cita
+
+muestra la tabla servicios segun su id coincida con el servicioId de la tabla  citasservicios
